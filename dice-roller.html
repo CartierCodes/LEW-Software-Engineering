@@ -1,0 +1,49 @@
+<!--
+ Author: Carter Burzlaff
+ Class:  Software Engineering
+ Project: Lab 2 / Dice Roller
+ Description: This is the first version of my Dice Roller application and is being submitted as part of Lab 2.
+-->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dice Roller</title>
+        <style>
+            body {
+                width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            input {
+                text-align: right;
+            }
+        </style>
+        <script>
+            function roll() {
+                num1 = getRandomVal()
+                num2 = getRandomVal()
+                document.getElementById("dice1").value = num1; //sets dice1 box
+                document.getElementById("dice2").value = num2; //sets dice2 box
+                document.getElementById("total").value = num1 + num2; //sets total box
+            }
+
+            function getRandomVal() {
+                return Math.floor(Math.random()*6) + 1;
+            }
+        </script>
+    </head>
+    <body onload="roll()" style="font-family: Arial, Helvetica, sans-serif">
+        <h2>Monopoly Dice Roller</h2>
+
+        <p>This is a dice roller for the board game Monopoly</p>
+        <p>Press the button below to roll a pair of 6-sided dice</p>
+
+        <button type="button" autofocus onclick="roll()">Roll The Dice</button><br/><br/>
+        Dice #1: <input id="dice1" type="text" value="" size="1" disabled><br/><br/>
+        Dice #2: <input id="dice2" type="text" value="" size="1" disabled><br/><br/>
+        Total Roll: <input id="total" type="text" value="" size="1" disabled>
+    </body>
+</html>

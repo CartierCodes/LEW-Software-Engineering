@@ -1,0 +1,44 @@
+<!--
+ Author: Carter Burzlaff
+ Class:  Software Engineering
+ Project: Lab 2 / RegExp Tester
+ Description: This is the first version of my RegExp Tester application and is being submitted as part of Lab 2.
+-->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>RegExp Tester</title>
+        <style>
+            body {
+                width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            input {
+                text-align: right;
+            }
+        </style>
+        <script>
+            function test() {
+                string = document.getElementById("string").value;
+                regexp = new RegExp(document.getElementById("regexp").value);
+
+                document.getElementById("result").value = regexp.test(string);
+            }
+        </script>
+    </head>
+    <body style="font-family: Arial, Helvetica, sans-serif">
+        <h2>RegExp Tester</h2>
+
+        <p>This is a web app designed to verify regular expressions</p>
+        <p>Place your string in one box and regexp in the other and click the button to see the result</p>
+        
+        String: <input id="string" type="text" value="" size="18">&ensp;&nbsp;
+        RegExp: <input id="regexp" type="text" value="" size="4">&ensp;
+        <button type="button" onclick="test()">Test</button><br/><br/>
+        Result: <input id="result" type="text" value="" size="1" disabled>
+    </body>
+</html>
